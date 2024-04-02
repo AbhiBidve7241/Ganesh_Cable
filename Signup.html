@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+ <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+
+<style>
+	        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+#banner {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+#features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.feature {
+    flex: 1;
+    text-align: center;
+    margin: 0 20px;
+}
+
+.feature h3 {
+    color: #007bff;
+}
+
+.feature p {
+    color: #666;
+}
+
+.feature a {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 20px 0;
+} 
+	 
+	
+	 
+	 
+	 
+	 
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.register-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+        
+        <link rel="stylesheet" href="styles.css">
+        <nav>
+            <ul>
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                  
+                  
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="learn.html">Home <span class="sr-only">(go back)</span></a>
+                        </li>
+                       
+                      </ul>
+                      <form class="form-inline my-2 my-lg-0">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <a href="./login.html">Login</a> </button>&nbsp;
+
+                        &nbsp;
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <a href="./Admin.html">Admin_Login</a></button>
+                      </form>
+                    </div>
+                  </nav>
+                
+            </ul>
+
+        </nav>
+        <center> <h1>Ganesh Cable</h1></center>
+    </header>
+
+ <div class="register-container">
+        <h2>User Registration</h2>
+        <form th:action="@{/register}" th:object="${User}" method="post">
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"  th:field="*{username}" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" th:field="*{usermail}"  required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" th:field="*{userpassword}"  required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <small (click)="gotoregistration()">Already User? <a href="login.html"> Go To Login</a></small>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .account-container{
+            width: 50%;
+            background-color: #dfefc7;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .account-details{
+            margin-top: 20px;
+            text-align: center;
+        }
+        p{
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Account</h1>
+    <div class="account-container>
+        <h1>Account Information</h1>
+        <div class="account-details>
+            <p><strong>Mobile Number:</strong> <span id="mobile-number">123-456-7890</span></p>
+            <p><strong>Address:</strong> <span id="address">123 Example Street, Example City, EX 12345</span></p>
+            <p><strong>Email:</strong> <span id="email">example@example.com</span></p>
+        </div>
+    </div>
+    <button onclick="updateAccountInfo()">Update Account Information</button>
+    <script>
+        function updateAccountInfo()
+        {
+            const mobileNumber = '555-555-5555')
+            const address = '456 Example Street, Example City, EX 12345'
+            const email = 'newemail@example.com'
+
+            document.getElementById('mobile-number').innerText = mobileNumber
+            document.getElementById('address').innerText = address
+            document.getElementById('email').innerText = email
+        }
+    </script>
+</body>
+</html>

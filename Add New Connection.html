@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add New Connection</title>
+        <style>
+            
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 50%;
+            width: 15%;
+        }   
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        } button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    
+        </style>
+        <hr>
+    </head>
+    <body>  
+        <h2>Add New Connection</h2>
+        <hr>
+        <form  th:action="@{/new connnection}" th:object="${User}" method="post">
+        
+            <div class="form-group">
+                <label for="Name"></label>
+                <input type="text" id="Name" name="Name" placeholder="Name" required>
+            </div><br><br>
+            <div class="form-group">
+                <label for="number"></label>
+                <input type="text" id="number" name="Mobile Number" placeholder="Mobile number" required>
+            </div><br><br>
+            <div class="form-group">
+                <label for="address"></label>
+                <input type="text" id="address" name="Address" placeholder="Enter Address" required>
+            </div><br><br>
+<button>Submit details</button> 
+
+        </form>
+<hr>
+<div>
+<a href="learn.html" style="color: white;background-color: green;">Go to Home</a>
+</div>
+<footer>
+    <div >
+        We will Contact you for additional information.
+        Thank you!
+        
+    </div>
+</footer>
+</body>
+    </html>

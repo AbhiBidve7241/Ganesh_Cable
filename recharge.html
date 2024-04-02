@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Options on Input Click</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        /* Style for the dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+        }
+
+        /* Style for each option */
+        .option {
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        } button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" id="myInput" placeholder="Connection Number" style=" box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);padding: 12px 16px;">
+   <!--<h2>Click on the input to see options:</h2>--> 
+    <!-- Input field -->
+    
+    <input type="text" id="myInput" onclick="showOptions()" placeholder="Click to select plan">
+
+    <!-- Dropdown content -->
+    <div id="myDropdown" class="dropdown-content">
+        <!-- Options -->
+        <div class="option" onclick="selectOption('MAHARASHTRA FTA')">MAHARASHTRA FTA(price=130₹)</div>
+        <div class="option" onclick="selectOption('HW MH SUPREME VALUE HD')">HW MH SUPREME VALUE HD(price=270₹)</div>
+        <div class="option" onclick="selectOption('HW MH MAHARASHTRA JUMBO HD')">HW MH MAHARASHTRA JUMBO HD(price=330₹)</div>
+        <div class="option" onclick="selectOption('HW MH ROYAL VALUE PLUS')">HW MH ROYAL VALUE PLUS(price=370₹)</div>
+    </div>
+    <button type="submit">Select</button>
+    <strong>
+        <a href="learn.html">Go to home</a>
+    </strong>
+    <script>
+        // Function to show options
+        function showOptions() {
+            var dropdown = document.getElementById("myDropdown");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+
+        // Function to select an option
+        function selectOption(option) {
+            // You can do whatever you want with the selected option
+            alert("You selected: " + option);
+            // For example, you can set the value of the input field to the selected option
+            document.getElementById("myInput").value = option;
+            // Hide the dropdown after selection
+            document.getElementById("myDropdown").style.display = "none";
+        }
+
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('#myInput')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === "block") {
+                        openDropdown.style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
