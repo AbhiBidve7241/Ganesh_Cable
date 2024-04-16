@@ -1,7 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Information</title>
+    <div style="background-color: #000000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;">
+        <h1>GANESH CABLE TV</h1>
+    </div>
+     
+     <hr>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,7 +20,8 @@
             flex-direction: column;
             align-items: center;
         }
-        .account-container{
+
+       .account-container {
             width: 50%;
             background-color: #dfefc7;
             padding: 20px;
@@ -22,40 +33,35 @@
             flex-direction: column;
             align-items: center;
         }
-        .account-details{
+
+       .account-details {
             margin-top: 20px;
             text-align: center;
         }
-        p{
+
+        p {
             margin-bottom: 10px;
         }
-        h1 {
-            color: green;
-        }
+
+       
     </style>
 </head>
 <body>
-    <h1>Account</h1>
-    <div class="account-container>
-        <h1>Account Information</h1>
-        <div class="account-details>
+   
+    <div class="account-container">
+        
+        <div class="account-details">
             <p><strong>Mobile Number:</strong> <span id="mobile-number">123-456-7890</span></p>
-            <p><strong>Address:</strong> <span id="address">123 Example Street, Example City, EX 12345</span></p>
+            <p><strong>Address:</strong> <span id="address">Bhise Niwas,Wagholi,Latur 413511</span></p>
             <p><strong>Email:</strong> <span id="email">example@example.com</span></p>
         </div>
     </div>
-    <button onclick="updateAccountInfo()">Update Account Information</button>
-    <script>
-        function updateAccountInfo()
-        {
-            const mobileNumber = '555-555-5555')
-            const address = '456 Example Street, Example City, EX 12345'
-            const email = 'newemail@example.com'
-
-            document.getElementById('mobile-number').innerText = mobileNumber
-            document.getElementById('address').innerText = address
-            document.getElementById('email').innerText = email
-        }
-    </script>
+    <button>
+        <a href="customer.php">Update Information</a>
+    </button>
+    <br>
+    <button>
+        <A href="learn.html">Home</A>
+    </button>
 </body>
 </html>
